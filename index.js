@@ -1,6 +1,9 @@
 import express from "express"
-import dotenv from "env"
+import dotenv from "dotenv"
 import mongoose from "mongoose"
+import authRoute from "./backend/routes/auth"
+import massagesRoute from "./backend/routes/massages"
+import usersRoute from "./backend/routes/users"
 const app= express()
 dotenv.config
 
@@ -13,7 +16,12 @@ const connect= async() =>{
     }
 };
 
-app.listen(3000,()=>{
+//middleware
+app.use("/auth", authRoute)
+app.use("/users", usersRoute)
+app.use("/massages", massagesRoute)
+
+app.listen(5500,()=>{
     connect()
     console.log("connected0")
 })
