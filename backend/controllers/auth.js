@@ -22,14 +22,20 @@ export const register =async(req,res,next)=>{
 }
 export const login =async(req,res,next)=>{
     try{
-        const user=await User.findOne({username:req.body.username})
+        const user=await user.findOne({username:req.body.username})
       
         if(!user)return next(createError(404, "user not found"))
 
-        const isPasswordCorrect= await bcrypt.compare(req.body.password, user.pass)
+        const isPasswordCorrect= await bcrypt.compare(req.body.password, user.password)
        
-        if(!isPasswordCorrect)return next(createError(404, "Wrong password/user name"))
-        res.status(200).json(user)
+        if(!isPasswordCorrect)
+        return next(createError(404, "Wrong password/username"))
+
+        const token = jwt.sign({id:user._id, isAdmin:user,isAdmin})
+
+        const {password, isAdmin}=user;
+
+        res.cookie("accessjwt", token).status(200).json(user)
     }catch(err){
         next(err)
     }
