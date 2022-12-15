@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 
-
 const massagesSchema= new mongoose.Schema({
     name:{
         type:String,
@@ -18,3 +17,5 @@ const massagesSchema= new mongoose.Schema({
         required:true
     },
 })
+
+export default mongoose.model("Massages", massagesSchema)

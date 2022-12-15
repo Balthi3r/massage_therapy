@@ -1,9 +1,10 @@
-import  Express from "express";
+import  express from "express";
+import { register } from "../controllers/auth";
 
 const router =express.router();
 
-router.get("/", (req,res)=>{
-    res.send()
-})
+router.get("/register", register)
+router.get("/login", login)
+
 
 export default router
