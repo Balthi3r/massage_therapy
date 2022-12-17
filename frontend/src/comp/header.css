@@ -1,0 +1,23 @@
+.header{
+    background-color: limegreen;
+    color: azure;
+    display: flex;
+    justify-content: center;
+}
+.headerContainer{
+    width:100%;
+    max-width: 1050px;
+    margin: 20px 0px 100px 0px;
+}
+
+.headerDesc{
+    margin: 20px 0px;
+}
+.headerBtn{
+    background-color: greenyellow;
+    color: azure;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}

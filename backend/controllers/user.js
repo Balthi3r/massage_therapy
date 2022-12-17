@@ -1,4 +1,4 @@
-import massage from "../models/massages"
+import user from "../models/user"
 
 export const createMassage = async (req,res,next)=>{
         const newMassages= new massages (req.body)
