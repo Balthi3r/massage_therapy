@@ -24,7 +24,7 @@ app.use("/auth", authRoute)
 app.use("/users", usersRoute)
 app.use("/massages", massagesRoute)
 
-app.listen(5500,()=>{
+app.listen(3000,()=>{
     connect()
     console.log("connected0")
 })
