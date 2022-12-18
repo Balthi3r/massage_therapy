@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Home from './pages/Home';
 import Massages from './pages/Massages';
 import about from './pages/about'
+import Auth from './pages/auth';
 
 function App() {
     return(
@@ -12,8 +12,8 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/about" link="/about" element={<about/>}/>
             <Route path="/massages" element={<Massages/>}/>
-            <Route path="/login" element={<login/>}/>
-            <Route path="/booking" element={<book/>}/>
+            <Route path="/auth" element={<Auth/>}/>
+            <Route path="/about" element={<about/>}/>
         </Routes>
     </BrowserRouter>
     )

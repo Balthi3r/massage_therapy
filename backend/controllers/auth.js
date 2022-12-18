@@ -1,42 +1,39 @@
 import user from "../models/user";
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
 
-export const register =async(req,res,next)=>{
-    try{
-        const salt= bcrypt.genSaltSync(10);
-        const hash= bcrypt.hashSync(req.body.password, salt);
+//register new user
+export const registerUser =async(req,res)=>{
+        const salt= await bcrypt.genSalt(10);
+        const hash= await  bcrypt.hash(password, salt);
 
 
         const newUser= new User({
-            username:req.body.username,
-            email:req.body.email,
+            username,
+            firstname,
+            lastname,
             password:hash,
         })
-
+    try{
         await newUser.save()
         res.status(200).send("New Created user")
     }catch(err){
-        next(err)
+       res.status(500).json
     }
 }
-export const login =async(req,res,next)=>{
-    try{
-        const user=await user.findOne({username:req.body.username})
-      
-        if(!user)return next(createError(404, "user not found"))
+//login
+export const loginUser =async(req,res)=>{
+        const {username,password}=req.body
+      try{
+        const user= await UserModel.findOne({username:username})
+        if(user){
+            const validity= await bcrypt.compare(password,user.password)
 
-        const isPasswordCorrect= await bcrypt.compare(req.body.password, user.password)
-       
-        if(!isPasswordCorrect)
-        return next(createError(404, "Wrong password/username"))
-
-        const token = jwt.sign({id:user._id, isAdmin:user,isAdmin})
-
-        const {password, isAdmin}=user;
-
-        res.cookie("accessjwt", token).status(200).json(user)
-    }catch(err){
-        next(err)
+            validity? res.status(200).json(user):res.status(400).json(incorrectpassword)
+        }
+        else{
+            res.status(404).json("user does not exist")
+        }
+      }catch(error){
+        res.status(500).json()
     }
 }
