@@ -1,56 +1,105 @@
 import React from "react";
 import "./auth.css"
 
-const Auth = ()=>{
-    return(
-        <div className="auth">
-            <div className="Webname">
-                <h1>Wish</h1>
+const Auth = () => {
+    return (
+      <div className="Auth">
+        <div className="a-left">
+        <div className="Webname">
+            <h1>Wish</h1>
             </div>
-            <login/>
-        </div>
-    )
-}
-function login(){
-    return(
-        <div>
-            <form className="infoform">
-                <h3>Log In</h3>
+      </div>
 
-                <div>
-                    <input type="text" placeholder="username" className="infoinput" name="username"/>
-                </div>
-                <div>
-                    <input type="password" placeholder="password" className="infoinput" name="password"/>
-                </div>
-                <div>
-                    <span>register here</span>
-                    <button className="login button">Login</button>
-                </div>
-            </form>
-        </div>
-    )
-}
-function signup(){
-    return(
-        <div className="signup">
-            <form className="signupform">
-                <h3>Sign up</h3>
-                <div>
-                <input type="text" placeholder="first name" className="infoinput" name="first name"/>
-                <input type="text" placeholder="last name" className="infoinput" name="lastname"/>
-                </div>
-                <div>
-                <input type="text" placeholder="username" className="infoinput" name="username"/>
-                </div>
-                <div>
-                <input type="text" placeholder="password" className="infoinput" name="password"/>
-                <input type="text" placeholder="confirm password" className="infoinput" name="confirmpassword"/>
-                <span>Login</span>
-                    <button className="login button">Signup</button>
-                </div>
-            </form>
-        </div>
-    )
-}
-export default Auth;
+      <LogIn/>
+      <SignUp/>
+    </div>
+  );
+};
+function LogIn() {
+    return (
+      <div className="a-right">
+        <form className="infoForm authForm">
+          <h3>Log In</h3>
+  
+          <div>
+            <input
+              type="text"
+              placeholder="Username"
+              className="infoInput"
+              name="username"
+            />
+          </div>
+  
+          <div>
+            <input
+              type="password"
+              className="infoInput"
+              placeholder="Password"
+              name="password"
+            />
+          </div>
+  
+          <div>
+              <span style={{ fontSize: "12px" }}>Register here</span>
+              <button className="button infoButton">Login</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+
+  function SignUp() {
+    return (
+      <div className="a-right">
+        <form className="infoForm authForm">
+          <h3>Sign up</h3>
+  
+          <div>
+            <input
+              type="text"
+              placeholder="First Name"
+              className="infoInput"
+              name="firstname"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="infoInput"
+              name="lastname"
+            />
+          </div>
+  
+          <div>
+            <input
+              type="text"
+              className="infoInput"
+              name="username"
+              placeholder="Usernames"
+            />
+          </div>
+  
+          <div>
+            <input
+              type="text"
+              className="infoInput"
+              name="password"
+              placeholder="Password"
+            />
+            <input
+              type="text"
+              className="infoInput"
+              name="confirmpass"
+              placeholder="Confirm Password"
+            />
+          </div>
+  
+          <div>
+              <span style={{fontSize: '12px'}}>Already have an account. Login!</span>
+          </div>
+          <button className="button infoButton" type="submit">Signup</button>
+        </form>
+      </div>
+    );
+  }
+  
+  export default Auth;
