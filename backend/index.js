@@ -2,9 +2,8 @@ import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import authRoute from "./backend/routes/auth"
-import massagesRoute from "./backend/routes/massages"
 import usersRoute from "./backend/routes/users"
-import cookieParser from "cookie-parser"
+import bodyParser from "body-parser"
 
 const app= express()
 dotenv.config
