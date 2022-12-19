@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    border:solid limegreen
+    border:solid rgb(11, 173, 73)
   }
   
   .infoInput{
