@@ -16,7 +16,6 @@ export const registerUser = async (req, res) => {
         return res.status(400).json({ message: "User already exists" });
     }
 }
-
 //login
 export const loginUser =async(req,res)=>{
         const {username,password}=req.body

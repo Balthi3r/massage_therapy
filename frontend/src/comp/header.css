@@ -3,6 +3,8 @@
     color: azure;
     display: flex;
     justify-content: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 .headerContainer{
     width:100%;
@@ -20,4 +22,6 @@
     border: none;
     padding: 10px;
     cursor: pointer;
+
+
 }

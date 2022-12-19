@@ -92,6 +92,12 @@ function LogIn() {
               placeholder="Confirm Password"
             />
           </div>
+          <input
+              type="text"
+              className="infoInput"
+              name="email"
+              placeholder="email"
+            />
   
           <div>
               <span style={{fontSize: '12px'}}>Already have an account. Login!</span>
