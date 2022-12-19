@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css"
 
+
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,20 +13,18 @@ const Navbar = () => {
     <ul className="navbar-nav">
     
       <li className="nav-item">
-        <a className="nav-link" href="/massages">massages</a>
+        <a className="nav-link" href="/massages">Massages</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/auth">log in</a>
+        <a className="nav-link" href="/auth">Login</a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="/book">Book Here</a>
       </li>
-      <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        </div>
+      <li className="nav-item">
+        <a className="nav-link" href="/about">About</a>
       </li>
+    
     </ul>
   </div>
 </nav>

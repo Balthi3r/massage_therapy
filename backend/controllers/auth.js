@@ -1,7 +1,6 @@
 import user from "../models/user";
 import bcrypt from "bcrypt"
 
-//register new user
 // Register new user
 export const registerUser = async (req, res) => {
 
@@ -15,7 +14,8 @@ export const registerUser = async (req, res) => {
   
       if (oldUser)
         return res.status(400).json({ message: "User already exists" });
-    }}
+    }
+}
 
 //login
 export const loginUser =async(req,res)=>{
@@ -32,4 +32,5 @@ export const loginUser =async(req,res)=>{
         }
       }catch(error){
         res.status(500).json(err)
-    }}
+    }
+}

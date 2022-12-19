@@ -1,0 +1,28 @@
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 5px 15px; 
+    grid-template-areas: 
+      ". ."; 
+    width: 300px; 
+    height: 300px; 
+  }
+/* Container holding the image and the text */
+.container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+ .container{
+    image: ;
+ }

@@ -1,6 +1,5 @@
 import React from "react";
 import "./auth.css"
-import Navbar from "../comp/nav/NavBar";
 
 const Auth = () => {
     return (
