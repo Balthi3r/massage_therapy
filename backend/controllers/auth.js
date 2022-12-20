@@ -7,15 +7,20 @@ export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(req.body.password, salt);
     req.body.password = hashedPass
-    const {username} = req.body
+    const newUser = new user({
+      firstname,
+      lastname,
+      password
+    });
+
     try {
-      // addition new
-      const oldUser = await user.findOne({ username });
-  
-      if (oldUser)
-        return res.status(400).json({ message: "User already exists" });
-    }
+      await newUser.save();
+      res.status(200).json(newUser)
+    }catch (error){
+    res.status(500).json(error)
+  }
 }
+
 //login
 export const loginUser =async(req,res)=>{
         const {username,password}=req.body
@@ -30,6 +35,6 @@ export const loginUser =async(req,res)=>{
             res.status(404).json("user does not exist")
         }
       }catch(error){
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 }

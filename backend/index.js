@@ -10,7 +10,7 @@ const app= express()
 dotenv.config();
 const PORT = process.env.PORT;
 
-const CONNECTION =process.env.MONGODB_CONNECTION;
+const CONNECTION =process.env.MONGO;
 mongoose
   .connect(CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Listening at Port ${PORT}`)))
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO_DB, {
+  .connect(process.env.MONGO, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -37,5 +37,4 @@ mongoose
 app.use(cookieParser());
 app.use("/auth", authRoute)
 app.use("/users", usersRoute)
-app.use("/massages", massagesRoute)
 

@@ -85,12 +85,7 @@ function LogIn() {
               name="password"
               placeholder="Password"
             />
-            <input
-              type="text"
-              className="infoInput"
-              name="confirmpass"
-              placeholder="Confirm Password"
-            />
+            
           </div>
           <input
               type="text"
